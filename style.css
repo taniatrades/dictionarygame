@@ -1,0 +1,269 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: url('https://unblast.com/wp-content/uploads/2018/12/Wood-Pattern-5.jpg');
+    background-position: right top;
+    background-size: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2000px;
+}
+
+.book {
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+    backface-visibility: visible;
+    height: 500px;
+}
+
+.front, .back, .page1, .page2, .page3, .page4, .page5, .page0 {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 350px;
+    height: 470px;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+}
+
+.front, .back {
+	box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+    background:  linear-gradient(45deg, #2b1283, transparent),
+#b14fd8 repeating-linear-gradient(45deg, #f727ca 0%, #af1796 5%);
+
+}
+
+.front,.page1,.page2,.page3,.page4,.page5,.page0,.back {
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.page1, .page2, .page3, .page4, .page5,.page0 { 
+    background: #efefef;
+}
+
+
+@keyframes flip{
+    0%{
+    transform: rotateY(-22deg) scale(1.1);
+    }
+}
+
+.front {
+    transform: rotateY(-170deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 #00000033;
+    animation-name: flip;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+
+.page0 {
+    transform: rotateY(-160deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 #00000033;
+    animation-name: flip;
+    animation-duration: 1.7s;
+    animation-iteration-count: 1;
+}
+
+.page1 {
+    transform: rotateY(-162deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 #00000033;
+    animation-name: flip;
+    animation-duration: 2.2s;
+    animation-iteration-count: 1;
+    background-position: center;
+    background-size: 100%;    
+}
+.page2 {
+    transform: rotateY(-158.9deg) scale(1.1);
+    animation-name: flip;
+    animation-duration: 2.7s;
+    animation-iteration-count: 1;
+    background-position: center;
+    background-size: 100%;  
+}
+.page3 {
+    transform: rotateY(-158deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 #00000033;
+    animation-name: flip;
+    animation-duration: 2.7s;
+    animation-iteration-count: 1;    
+}
+.page4 {
+    transform: rotateY(-20deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+    background: #f3f1f1ee;
+}
+.page5 {
+    box-shadow: 0 1em 3em 0 #00000033;
+    transform: rotateY(-17deg) scale(1.1);
+}
+
+.back {
+    transform: rotateY(-5deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 #00000033;
+} 
+
+@keyframes slide{
+0%{
+    padding-top: 150px;
+    }
+}
+
+section.input{
+    padding-top: 20px;
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+.form_wrap{
+    display: flex;
+    justify-content: center;
+}
+
+.input_wrap{
+    display: flex;
+    justify-content: center;
+    border: 2px solid gray;
+    border-image-slice: 1;   
+    margin-top: 10px;
+    border-radius: 30px;
+}
+
+.input_wrap:hover{    
+    border: 2px solid #303030;
+}
+
+input{
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 140px;
+    outline: none;
+    border-radius: 20px 0 0px 20px;
+    background:rgb(238, 236, 236);
+}
+
+button{
+    height: 100%;
+    padding: 0 12px;
+    border: none;
+    border-radius: 0 30px 30px 0px;
+    outline: none;
+    cursor: pointer;
+    background:rgb(228, 228, 228);
+}
+
+button img{   
+    width: 18px;
+}
+button:focus{
+    background:rgb(212, 212, 212);
+}
+section.data{
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#loading{
+   display: none;
+}
+
+.load {
+  background-color: transparent;
+  border: none;  
+  padding: 12px 24px; 
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+
+#result{
+    margin-top: 40px;
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#result img{
+    width: 200px;
+    margin: 30px;
+}
+
+h1{
+    font-size: 40px;
+    color: black;
+    margin-top: 170px;
+    backface-visibility: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ h4{
+    font-size: 20px;
+    transform: scale(-1, 1);
+    text-align: center;
+    margin-top: 20px;    
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+ }
+
+h3{
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.list{
+    transform: scale(-1, 1);
+    position: relative;
+    top: 15px;
+    right: 40px;
+    font-size: 14px;
+}
+
+li{
+    padding-left: 5px;
+    color: #303030;
+}
+
+i{
+font-size: 12px;
+font-family: sans-serif;
+padding-right:6px;
+}
+
+ p{
+    margin: 30px;
+    backface-visibility: hidden;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: thin;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.page0 p{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+.book{
+    transform: scale(0.8);
+    }
+}
